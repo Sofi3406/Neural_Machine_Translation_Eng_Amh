@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.ipynb_checkpoints/
+.pytest_cache/
+.streamlit/secrets.toml
+
+# Local experiment logs
+*.log
