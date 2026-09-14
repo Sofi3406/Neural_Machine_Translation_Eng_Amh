@@ -117,9 +117,11 @@ class AttnSeq2Seq(nn.Module):
         self.eval()
         encoder_outputs, hidden, cell = self.encoder(src)
         input_tok = torch.tensor([trg_vocab.stoi[SOS_TOKEN]], device=self.device)
+        unk_id = trg_vocab.stoi[UNK_TOKEN]
         result_ids = []
         for _ in range(max_len):
             output, hidden, cell, _ = self.decoder(input_tok, hidden, cell, encoder_outputs)
+            output[0, unk_id] = float("-inf")
             top1 = output.argmax(1)
             token_id = top1.item()
             if token_id == trg_vocab.stoi[EOS_TOKEN]:

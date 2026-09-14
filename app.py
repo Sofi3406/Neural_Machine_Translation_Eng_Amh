@@ -16,7 +16,7 @@ def load_translator():
 
 translator = load_translator()
 
-text = st.text_area("Enter an English sentence:", "I am going to the university.")
+text = st.text_area("Enter an English sentence:", "The king was old and full of years.")
 
 if st.button("Translate", type="primary") and text.strip():
     with st.spinner("Translating..."):

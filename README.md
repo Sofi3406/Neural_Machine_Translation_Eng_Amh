@@ -47,4 +47,6 @@ The model files in `deployment_artifacts/` are required at runtime. Keep them in
 
 ## Model notes
 
-The notebook documents preprocessing, vocabulary creation, training, attention-based decoding, and evaluation. The Streamlit app loads the model once with `st.cache_resource`, then performs CPU inference when no GPU is available.
+The notebook documents preprocessing, vocabulary creation, training, attention-based decoding, and evaluation. The checked-in checkpoint was produced with the notebook's previous quick-test setting (`3` epochs on a `3,000`-sentence subset), so it is useful for testing the deployment plumbing but is not a usable translation model. Run the notebook with `QUICK_MODE = False` to train on the full dataset for `20` epochs, then rerun the deployment artifact cell before deploying. The training notebook keeps rare words with `MIN_FREQ = 1`, and decoding masks `<unk>` as a fallback, but neither replaces proper retraining.
+
+The Streamlit app loads the model once with `st.cache_resource`, then performs CPU inference when no GPU is available.
