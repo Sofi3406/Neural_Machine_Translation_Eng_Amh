@@ -48,7 +48,3 @@ The model files in `deployment_artifacts/` are required at runtime. Keep them in
 ## Model notes
 
 The notebook documents preprocessing, vocabulary creation, training, attention-based decoding, and evaluation. The Streamlit app loads the model once with `st.cache_resource`, then performs CPU inference when no GPU is available.
-
-## License
-
-Add the license that applies to the training data, model, and source code before publishing this repository.
