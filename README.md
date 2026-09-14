@@ -4,7 +4,7 @@ An attention-based sequence-to-sequence LSTM model that translates short English
 
 ## Demo
 
-The app is designed for deployment on [Streamlit Community Cloud](https://streamlit.io/cloud).
+The app is designed for deployment on [Streamlit Community Cloud](https://englishtoamharicneuralmachinetranslation.streamlit.app/).
 
 ## Project structure
 
